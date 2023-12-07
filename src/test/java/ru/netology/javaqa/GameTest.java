@@ -11,8 +11,8 @@ public class GameTest {
         Player player1 = new Player(3, "Killer", 100);
         Player player2 = new Player(78, "Fast", 700);
         Game game = new Game();
-        game.register(player1);
-        game.register(player2);
+        game.register("Killer", player1);
+        game.register("Fast", player2);
         int expected = 2;
         int actual = game.round("Killer", "Fast");
         Assertions.assertEquals(expected, actual);
@@ -23,8 +23,8 @@ public class GameTest {
         Player player1 = new Player(3, "Killer", 300);
         Player player2 = new Player(78, "Fast", 100);
         Game game = new Game();
-        game.register(player1);
-        game.register(player2);
+        game.register("Killer", player1);
+        game.register("Fast", player2);
         int expected = 1;
         int actual = game.round("Killer", "Fast");
         Assertions.assertEquals(expected, actual);
@@ -35,8 +35,8 @@ public class GameTest {
         Player player1 = new Player(3, "Killer", 300);
         Player player2 = new Player(78, "Fast", 300);
         Game game = new Game();
-        game.register(player1);
-        game.register(player2);
+        game.register("Killer", player1);
+        game.register("Fast", player2);
         int expected = 0;
         int actual = game.round("Killer", "Fast");
         Assertions.assertEquals(expected, actual);
@@ -47,8 +47,8 @@ public class GameTest {
         Player player1 = new Player(3, "Killer", 300);
         Player player2 = new Player(78, "Fast", 300);
         Game game = new Game();
-        game.register(player1);
-        game.register(player2);
+        game.register("Killer", player1);
+        game.register("Fast", player2);
 
         Assertions.assertThrows(NotRegisteredException.class, () -> game.round("killer", "Fast"));
     }
@@ -58,8 +58,8 @@ public class GameTest {
         Player player1 = new Player(3, "Killer", 300);
         Player player2 = new Player(78, "Fast", 300);
         Game game = new Game();
-        game.register(player1);
-        game.register(player2);
+        game.register("Killer", player1);
+        game.register("Fast", player2);
 
         Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Killer", "fast"));
     }
@@ -69,8 +69,8 @@ public class GameTest {
         Player player1 = new Player(3, "Killer", 300);
         Player player2 = new Player(78, "Fast", 300);
         Game game = new Game();
-        game.register(player1);
-        game.register(player2);
+        game.register("Killer", player1);
+        game.register("Fast", player2);
 
         Assertions.assertThrows(NotRegisteredException.class, () -> game.round("killer", "fast"));
     }
